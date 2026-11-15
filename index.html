@@ -3,427 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Casa Victoria | Ubicación y Plusvalía</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-background:#0a0a0a;
-color:#eaeaea;
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 20% 30%, rgba(255,255,255,.03), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(255,255,255,.02), transparent 40%),
-linear-gradient(135deg, rgba(255,255,255,.015) 25%, transparent 25%),
-linear-gradient(225deg, rgba(255,255,255,.015) 25%, transparent 25%);
-background-size:300px 300px;
-z-index:-1;
-}
-
-header{
-text-align:center;
-padding:100px 20px 80px;
-border-bottom:1px solid #c9a24a;
-position:relative;
-}
-
-.logo{
-width:160px;
-max-width:80%;
-}
-
-.music-btn{
-position:absolute;
-top:20px;
-right:20px;
-background:#d4af37;
-color:#000;
-border:none;
-padding:10px 18px;
-border-radius:25px;
-font-size:13px;
-cursor:pointer;
-z-index:9999;
-}
-
-h1{
-font-family:'Playfair Display',serif;
-font-size:42px;
-color:#d4af37;
-margin-top:20px;
-}
-
-.sub{
-color:#aaa;
-letter-spacing:2px;
-}
-
-.hero-text{
-max-width:760px;
-margin:25px auto;
-color:#ccc;
-line-height:1.8;
-}
-
-.price{
-font-size:32px;
-color:#d4af37;
-margin:20px 0;
-font-weight:700;
-}
-
-.btn{
-background:#d4af37;
-color:#000;
-padding:15px 35px;
-border-radius:35px;
-text-decoration:none;
-font-weight:700;
-display:inline-block;
-margin-top:20px;
-text-align:center;
-transition:.3s;
-}
-
-.btn:hover{
-background:#fff;
-transform:translateY(-3px);
-}
-
-.btn-row{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-.section{
-padding:70px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.section h2{
-font-family:'Playfair Display',serif;
-color:#d4af37;
-font-size:34px;
-}
-
-.divider{
-width:80px;
-height:2px;
-background:#d4af37;
-margin:15px 0 30px;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:360px;
-object-fit:cover;
-border-radius:16px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 18px 45px rgba(0,0,0,.35);
-}
-
-.fachada-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:24px;
-}
-
-.fachada-grid img{
-width:100%;
-height:520px;
-object-fit:cover;
-border-radius:16px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 18px 45px rgba(0,0,0,.35);
-}
-
-.gallery img:hover,
-.fachada-grid img:hover,
-.ubicacion-img:hover{
-transform:scale(1.02);
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:#111;
-padding:25px;
-border-radius:14px;
-border:1px solid rgba(212,175,55,.25);
-text-align:center;
-font-weight:600;
-line-height:1.6;
-}
-
-.invest{
-background:#111;
-padding:45px 25px;
-border-radius:16px;
-text-align:center;
-border:1px solid rgba(212,175,55,.25);
-}
-
-.invest p{
-line-height:1.8;
-max-width:900px;
-margin:20px auto;
-}
-
-.ubicacion-img{
-width:100%;
-border-radius:16px;
-box-shadow:0 18px 45px rgba(0,0,0,.35);
-cursor:pointer;
-transition:.3s;
-}
-
-footer{
-text-align:center;
-padding:45px 20px;
-border-top:1px solid #c9a24a;
-color:#aaa;
-line-height:1.7;
-}
-
-#modal{
-display:none;
-position:fixed;
-z-index:9999;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.95);
-justify-content:center;
-align-items:center;
-cursor:pointer;
-}
-
-#modalImg{
-max-width:95%;
-max-height:95%;
-border-radius:14px;
-}
-
-@media(max-width:768px){
-h1{
-font-size:34px;
-}
-
-.fachada-grid img,
-.gallery img{
-height:300px;
-}
-
-.music-btn{
-position:static;
-margin-top:20px;
-}
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:#0a0a0a;color:#eaeaea;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.03),transparent 40%),radial-gradient(circle at 80% 70%,rgba(255,255,255,.02),transparent 40%);pointer-events:none;z-index:-1}
+header{text-align:center;padding:95px 20px 75px;border-bottom:1px solid #c9a24a;position:relative;background:linear-gradient(rgba(0,0,0,.73),rgba(0,0,0,.82)),url('portada.jpg') center center/cover no-repeat;min-height:590px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.logo{width:160px;max-width:80%;object-fit:contain}
+.music-btn{position:absolute;top:20px;right:20px;background:#d4af37;color:#000;border:none;padding:10px 18px;border-radius:25px;font-size:13px;cursor:pointer;z-index:2}
+h1{font-family:'Playfair Display',serif;font-size:42px;color:#d4af37;margin-top:20px}
+.sub{color:#eee;letter-spacing:2px}
+.hero-text{max-width:760px;margin:25px auto;color:#f0f0f0;line-height:1.8;text-shadow:0 1px 4px #000}
+.price{font-size:32px;color:#d4af37;margin:20px 0;font-weight:700}
+.btn{background:#d4af37;color:#000;padding:15px 35px;border-radius:35px;text-decoration:none;font-weight:700;display:inline-block;margin-top:20px;text-align:center;transition:.3s}
+.btn:hover{background:#fff;transform:translateY(-3px)}
+.btn-row{display:flex;justify-content:center;align-items:center;gap:15px;flex-wrap:wrap;margin-top:20px}
+.section{padding:70px 20px;max-width:1200px;margin:auto}
+.section h2{font-family:'Playfair Display',serif;color:#d4af37;font-size:34px}
+.divider{width:80px;height:2px;background:#d4af37;margin:15px 0 30px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.gallery img{width:100%;height:340px;object-fit:cover;border-radius:16px;cursor:pointer;transition:.3s;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+.fachada-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.fachada-grid img{width:100%;height:520px;object-fit:cover;border-radius:16px;cursor:pointer;transition:.3s;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+.gallery img:hover,.fachada-grid img:hover,.ubicacion-img:hover{transform:scale(1.02)}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#111;padding:25px;border-radius:14px;border:1px solid rgba(212,175,55,.25);text-align:center;font-weight:600;line-height:1.6}
+.invest{background:#111;padding:45px 25px;border-radius:16px;text-align:center;border:1px solid rgba(212,175,55,.25)}
+.invest p{line-height:1.8;max-width:900px;margin:20px auto}
+.ubicacion-img{width:100%;border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.35);cursor:pointer;transition:.3s}
+footer{text-align:center;padding:45px 20px;border-top:1px solid #c9a24a;color:#aaa;line-height:1.7}
+#modal{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.95);justify-content:center;align-items:center;cursor:pointer;padding:15px}
+#modalImg{max-width:95%;max-height:95%;object-fit:contain;border-radius:14px}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery img{height:310px}}
+@media(max-width:600px){header{padding:85px 18px 55px;min-height:580px}h1{font-size:34px}.hero-text{font-size:14px}.price{font-size:27px}.gallery,.fachada-grid{grid-template-columns:1fr}.fachada-grid img,.gallery img{height:300px}.section{padding:48px 16px}.btn-row{gap:8px}.btn{width:100%;max-width:370px;margin-top:10px;padding:14px 20px}.music-btn{top:12px;right:12px}}
 </style>
 </head>
-
 <body>
-
 <header>
-
 <img src="logo.png" class="logo" alt="Logo">
-
-<button class="music-btn" onclick="activarMusica()">
-🎧 Música
-</button>
-
+<button class="music-btn" type="button" onclick="activarMusica()">🎧 Música</button>
 <h1>Casa Victoria</h1>
-
 <p class="sub">Excelente ubicación y accesos</p>
-
-<p class="hero-text">
-Una propiedad diseñada para quienes entienden que invertir bien también es vivir mejor.
-<br><br>
-Ubicada en una zona estratégica, Col. Heriberto Casas, una Propiedad que combina comodidad, amplitud y plusvalía.
-</p>
-
+<p class="hero-text">Una propiedad diseñada para quienes entienden que invertir bien también es vivir mejor.<br><br>Ubicada en una zona estratégica, Col. Heriberto Casas, una propiedad que combina comodidad, amplitud y plusvalía.</p>
 <div class="price">$ 3,600,000 MXN</div>
-
 <div class="btn-row">
-
-<a class="btn" 
-href="https://wa.me/523221340289?text=Hola,%20me%20interesa%20la%20casa%20en%20Col.%20H.Casas.%20¿Podrías%20compartirme%20precio%20actual%20y%20opciones%20de%20crédito?" 
-target="_blank">
-📲 Solicitar información completa
-</a>
-
-<a class="btn" href="https://ventasrodrigomaldonado-ux.github.io/RODRIGO-MALDONADO-PERFIL/" target="_blank">
-💬 Visita Nuestro Catálogo
-</a>
-
+<a class="btn" href="https://wa.me/523221340289?text=Hola,%20me%20interesa%20la%20casa%20en%20Col.%20H.Casas.%20%C2%BFPodr%C3%ADas%20compartirme%20precio%20actual%20y%20opciones%20de%20cr%C3%A9dito%3F" target="_blank" rel="noopener noreferrer">📲 Solicitar información completa</a>
+<a class="btn" href="https://ventasrodrigomaldonado-ux.github.io/RODRIGO-MALDONADO-PERFIL/" target="_blank" rel="noopener noreferrer">💬 Visita Nuestro Catálogo</a>
 </div>
-
 </header>
-
-<section class="section">
-
-<h2>Fachada</h2>
-<div class="divider"></div>
-
-<div class="fachada-grid">
-
-<img src="fachada1.jpg" onclick="abrirModal(this.src)" alt="Fachada Gobernadores 1">
-
-<img src="fachada2.jpg" onclick="abrirModal(this.src)" alt="Fachada Gobernadores 2">
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Galería</h2>
-<div class="divider"></div>
-
-<div class="gallery">
-
-<img src="foto1.jpg" onclick="abrirModal(this.src)" alt="Galería Gobernadores 1">
-<img src="foto2.jpg" onclick="abrirModal(this.src)" alt="Galería Gobernadores 2">
-<img src="foto3.jpg" onclick="abrirModal(this.src)" alt="Galería Gobernadores 3">
-<img src="foto4.jpg" onclick="abrirModal(this.src)" alt="Galería Gobernadores 4">
-<img src="foto5.jpg" onclick="abrirModal(this.src)" alt="Galería Gobernadores 5">
-<img src="foto6.jpg" onclick="abrirModal(this.src)" alt="Galería Gobernadores 6">
-
-</div>
-
-</section>
-
-<section class="section invest">
-
-<h2>Potencial de Inversión</h2>
-
-<p>
-✔ Alta demanda en la zona<br>
-✔ Ideal como primera o segunda vivienda<br>
-✔ Plusvalía en crecimiento constante<br>
-✔ Cuenta con Local Comercial  
-</p>
-
-</section>
-
-<section class="section">
-
-<h2>Características</h2>
-<div class="divider"></div>
-
-<div class="features">
-
-<div class="card">4 Recámaras</div>
-<div class="card">4 Baños</div>
-<div class="card">Cocina con Alacena de madera importada</div>
-<div class="card">Área de servicio</div>
-<div class="card">Cochera techada con portón</div>
-<div class="card">Patio trasero</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Ubicación</h2>
-<div class="divider"></div>
-
-<img src="ubicacion.jpg" class="ubicacion-img" onclick="abrirModal(this.src)" alt="Ubicación Victoria">
-
-<div class="btn-row">
-<a class="btn" href="estudio-zona.pdf" target="_blank">
-📊 Ver estudio de zona
-</a>
-</div>
-
-</section>
-
-<section class="section invest">
-
-<h2>Oportunidad Limitada</h2>
-
-<p>
-Propiedades con estas características en esta zona no permanecen disponibles mucho tiempo.
-<br>
-Agenda tu visita antes de que se reserve.
-</p>
-
-<div style="margin-top:20px;">
-<a class="btn" 
-href="https://wa.me/523221340289?text=Hola%2C%20me%20interesa%20la%20casa%20en%20Col.%20H.casas.%20%C2%BFPodr%C3%ADas%20compartirme%20precio%20actual%20y%20opciones%20de%20cr%C3%A9dito%3F" 
-target="_blank">
-📲 Agendar una Cita
-</a>
-</div>
-
-</section>
-
-<footer>
-Torrez & Maldonado <br>
-Rodrigo MaldonadoRODRIGO MALDONADO | ASESOR<br>
-Gestión y localización de propiedades comerciales y viviendas<br>
-+52 322 134 0289 | ventas.rodrigomaldonado@gmail.com
-</footer>
-
-<div id="modal">
-<img id="modalImg" src="">
-</div>
-
-<audio id="musica" loop>
-<source src="musica.mp3" type="audio/mpeg">
-</audio>
-
+<section class="section"><h2>Fachada</h2><div class="divider"></div><div class="fachada-grid">
+<img src="fachada1.jpg" onclick="abrirModal(this.src)" alt="Fachada Casa Victoria 1" loading="lazy">
+<img src="fachada2.jpg" onclick="abrirModal(this.src)" alt="Fachada Casa Victoria 2" loading="lazy">
+</div></section>
+<section class="section"><h2>Galería</h2><div class="divider"></div><div class="gallery">
+<img src="foto1.jpg" onclick="abrirModal(this.src)" alt="Galería Casa Victoria 1" loading="lazy">
+<img src="foto2.jpg" onclick="abrirModal(this.src)" alt="Galería Casa Victoria 2" loading="lazy">
+<img src="foto3.jpg" onclick="abrirModal(this.src)" alt="Galería Casa Victoria 3" loading="lazy">
+<img src="foto4.jpg" onclick="abrirModal(this.src)" alt="Galería Casa Victoria 4" loading="lazy">
+<img src="foto5.jpg" onclick="abrirModal(this.src)" alt="Galería Casa Victoria 5" loading="lazy">
+<img src="foto6.jpg" onclick="abrirModal(this.src)" alt="Galería Casa Victoria 6" loading="lazy">
+</div></section>
+<section class="section invest"><h2>Potencial de Inversión</h2><p>✔ Alta demanda en la zona<br>✔ Ideal como primera o segunda vivienda<br>✔ Plusvalía en crecimiento constante<br>✔ Cuenta con local comercial</p></section>
+<section class="section"><h2>Características</h2><div class="divider"></div><div class="features">
+<div class="card">4 Recámaras</div><div class="card">4 Baños</div><div class="card">Cocina con alacena de madera importada</div><div class="card">Área de servicio</div><div class="card">Cochera techada con portón</div><div class="card">Patio trasero</div>
+</div></section>
+<section class="section"><h2>Ubicación</h2><div class="divider"></div><img src="ubicacion.jpg" class="ubicacion-img" onclick="abrirModal(this.src)" alt="Ubicación Victoria" loading="lazy"><div class="btn-row"><a class="btn" href="estudio-zona.pdf" target="_blank" rel="noopener noreferrer">📊 Ver estudio de zona</a></div></section>
+<section class="section invest"><h2>Oportunidad Limitada</h2><p>Propiedades con estas características en esta zona no permanecen disponibles mucho tiempo.<br>Agenda tu visita antes de que se reserve.</p><div style="margin-top:20px"><a class="btn" href="https://wa.me/523221340289?text=Hola%2C%20me%20interesa%20la%20casa%20en%20Col.%20H.casas.%20%C2%BFPodr%C3%ADas%20compartirme%20precio%20actual%20y%20opciones%20de%20cr%C3%A9dito%3F" target="_blank" rel="noopener noreferrer">📲 Agendar una Cita</a></div></section>
+<footer>Torres &amp; Maldonado<br>RODRIGO MALDONADO | ASESOR<br>Gestión y localización de propiedades comerciales y viviendas<br>+52 322 134 0289 | ventas.rodrigomaldonado@gmail.com</footer>
+<div id="modal" role="dialog" aria-modal="true" aria-label="Fotografía ampliada" onclick="cerrarModal()"><img id="modalImg" alt="Fotografía ampliada"></div>
+<audio id="musica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
 <script>
-function activarMusica(){
-let audio = document.getElementById("musica");
-audio.play();
-}
-
-function abrirModal(src){
-document.getElementById("modal").style.display="flex";
-document.getElementById("modalImg").src=src;
-}
-
-document.getElementById("modal").addEventListener("click",function(){
-this.style.display="none";
-document.getElementById("modalImg").src="";
-});
+function activarMusica(){const audio=document.getElementById('musica');const boton=document.querySelector('.music-btn');if(audio.paused){audio.play().then(()=>boton.textContent='⏸ Pausar música').catch(()=>{boton.textContent='🎧 Música';});}else{audio.pause();boton.textContent='🎧 Música';}}
+function abrirModal(src){document.getElementById('modal').style.display='flex';document.getElementById('modalImg').src=src;}
+function cerrarModal(){document.getElementById('modal').style.display='none';document.getElementById('modalImg').removeAttribute('src');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarModal();});
 </script>
-
 </body>
 </html>
